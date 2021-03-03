@@ -54,10 +54,10 @@ Checked 12 custom resource definitions
 Checked 3 Istio Deployments
 ✔ Istio is installed and verified successfully
 ```
-
+```
 curl http://104.197.166.37/wrongpath
 404 page not found
-
+```
 ```
 kubectl -n online-boutique logs -l app=frontend  -c istio-proxy --tail=1 | jq .
 {
