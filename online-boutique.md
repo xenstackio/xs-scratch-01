@@ -1,18 +1,56 @@
 
 output of kubectl -n online-boutique get pods
 ```
-root@kubernetes1:~/istio-1.9.1/online-boutique# kubectl -n online-boutique get pods
-NAME                                     READY   STATUS    RESTARTS   AGE
-adservice-7659d48d84-c664r               2/2     Running   0          2m2s
-cartservice-65c987d449-9lgkh             2/2     Running   2          2m3s
-checkoutservice-8bddb89db-l4rt8          2/2     Running   0          2m3s
-currencyservice-7978fb77d8-9dw92         2/2     Running   0          2m2s
-emailservice-8848674-2pcjh               2/2     Running   0          2m3s
-frontend-58594bf684-gdsvq                2/2     Running   0          2m3s
-paymentservice-77979f5c66-jlxgr          2/2     Running   0          2m3s
-productcatalogservice-7d5f94d858-krbwt   2/2     Running   0          2m2s
-recommendationservice-764dc66688-jpwfj   2/2     Running   0          2m3s
-redis-cart-74594bd569-gtg7j              2/2     Running   0          2m2s
-shippingservice-589dc45c5d-zmjb2         2/2     Running   0          2m2s
-root@kubernetes1:~/istio-1.9.1/online-boutique#
+istioctl verify-install
+1 Istio control planes detected, checking --revision "default" only
+✔ ClusterRole: istiod-istio-system.istio-system checked successfully
+✔ ClusterRole: istio-reader-istio-system.istio-system checked successfully
+✔ ClusterRoleBinding: istio-reader-istio-system.istio-system checked successfully
+✔ ClusterRoleBinding: istiod-istio-system.istio-system checked successfully
+✔ Role: istiod-istio-system.istio-system checked successfully
+✔ RoleBinding: istiod-istio-system.istio-system checked successfully
+✔ ServiceAccount: istio-reader-service-account.istio-system checked successfully
+✔ ServiceAccount: istiod-service-account.istio-system checked successfully
+✔ ValidatingWebhookConfiguration: istiod-istio-system.istio-system checked successfully
+✔ CustomResourceDefinition: destinationrules.networking.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: envoyfilters.networking.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: gateways.networking.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: serviceentries.networking.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: sidecars.networking.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: virtualservices.networking.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: workloadentries.networking.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: workloadgroups.networking.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: authorizationpolicies.security.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: peerauthentications.security.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: requestauthentications.security.istio.io.istio-system checked successfully
+✔ CustomResourceDefinition: istiooperators.install.istio.io.istio-system checked successfully
+✔ ConfigMap: istio.istio-system checked successfully
+✔ Deployment: istiod.istio-system checked successfully
+✔ ConfigMap: istio-sidecar-injector.istio-system checked successfully
+✔ MutatingWebhookConfiguration: istio-sidecar-injector.istio-system checked successfully
+✔ PodDisruptionBudget: istiod.istio-system checked successfully
+✔ Service: istiod.istio-system checked successfully
+✔ EnvoyFilter: metadata-exchange-1.8.istio-system checked successfully
+✔ EnvoyFilter: tcp-metadata-exchange-1.8.istio-system checked successfully
+✔ EnvoyFilter: stats-filter-1.8.istio-system checked successfully
+✔ EnvoyFilter: tcp-stats-filter-1.8.istio-system checked successfully
+✔ EnvoyFilter: metadata-exchange-1.9.istio-system checked successfully
+✔ EnvoyFilter: tcp-metadata-exchange-1.9.istio-system checked successfully
+✔ EnvoyFilter: stats-filter-1.9.istio-system checked successfully
+✔ EnvoyFilter: tcp-stats-filter-1.9.istio-system checked successfully
+✔ Deployment: istio-ingressgateway.istio-system checked successfully
+✔ PodDisruptionBudget: istio-ingressgateway.istio-system checked successfully
+✔ Role: istio-ingressgateway-sds.istio-system checked successfully
+✔ RoleBinding: istio-ingressgateway-sds.istio-system checked successfully
+✔ Service: istio-ingressgateway.istio-system checked successfully
+✔ ServiceAccount: istio-ingressgateway-service-account.istio-system checked successfully
+✔ Deployment: istio-egressgateway.istio-system checked successfully
+✔ PodDisruptionBudget: istio-egressgateway.istio-system checked successfully
+✔ Role: istio-egressgateway-sds.istio-system checked successfully
+✔ RoleBinding: istio-egressgateway-sds.istio-system checked successfully
+✔ Service: istio-egressgateway.istio-system checked successfully
+✔ ServiceAccount: istio-egressgateway-service-account.istio-system checked successfully
+Checked 12 custom resource definitions
+Checked 3 Istio Deployments
+✔ Istio is installed and verified successfully
 ```
